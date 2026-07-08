@@ -1,0 +1,53 @@
+title: Denied Connection At Perimeter
+id: 0c011704-9903-4237-9da6-87656f83e39b
+name: fw_denied_connection
+status: experimental
+description: >
+  Base rule for the port scan correlation below. Matches denied connections in
+  firewall logs; scans show up as one source sweeping many ports or hosts and
+  collecting mostly denies.
+references:
+  - https://attack.mitre.org/techniques/T1046/
+author: Ahmed Salem
+date: 2026-06-18
+logsource:
+  category: firewall
+detection:
+  selection:
+    action: 'deny'
+  condition: selection
+falsepositives:
+  - Ordinary background internet noise on externally exposed interfaces
+level: informational
+tags:
+  - attack.discovery
+  - attack.t1046
+
+---
+title: Port Scan Pattern From Single Source
+id: 98c73222-c7cb-4a86-9f65-d6d169d44b76
+status: experimental
+description: >
+  One source touching ten or more distinct destination ports within one minute.
+  Vertical scan of a single host is the main target; the same logic catches
+  noisy horizontal sweeps. Authorized vulnerability scanners will trigger this
+  on every run, so scanner sources should be documented and scoped out.
+author: Ahmed Salem
+date: 2026-06-18
+correlation:
+  type: value_count
+  rules:
+    - fw_denied_connection
+  group-by:
+    - src_ip
+  timespan: 1m
+  condition:
+    gte: 10
+    field: dst_port
+falsepositives:
+  - Vulnerability scanners and asset discovery tools on their scheduled runs
+  - Network monitoring systems probing service health
+level: medium
+tags:
+  - attack.discovery
+  - attack.t1046

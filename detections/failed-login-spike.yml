@@ -1,0 +1,58 @@
+title: Failed Logon Event From Network Source
+id: 23224f98-a5e3-4819-9c3a-10b81ae40a2a
+name: failed_logon_network
+status: experimental
+description: >
+  Base rule matching failed logons (event 4625) with a network source address.
+  Used by the correlation below to catch bursts against one target from one source,
+  which is the typical shape of password guessing.
+references:
+  - https://attack.mitre.org/techniques/T1110/001/
+author: Ahmed Salem
+date: 2026-06-18
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4625
+  filter_local:
+    IpAddress:
+      - '127.0.0.1'
+      - '::1'
+      - '-'
+  condition: selection and not filter_local
+falsepositives:
+  - Service accounts with an expired or rotated password stuck in a retry loop
+  - Users returning from leave and cycling through old passwords
+  - Locked screens replaying cached credentials after a password change
+level: low
+tags:
+  - attack.credential-access
+  - attack.t1110.001
+
+---
+title: Failed Login Spike From Single Source
+id: 19df6485-ef89-480c-986a-5fdda7fdb161
+status: experimental
+description: >
+  Six or more failed logons from the same source address within two minutes.
+  Thresholds fit my lab volume; production values need tuning against baseline
+  authentication noise.
+author: Ahmed Salem
+date: 2026-06-18
+correlation:
+  type: event_count
+  rules:
+    - failed_logon_network
+  group-by:
+    - IpAddress
+  timespan: 2m
+  condition:
+    gte: 6
+falsepositives:
+  - Misconfigured applications retrying stored credentials at fixed intervals
+level: medium
+tags:
+  - attack.credential-access
+  - attack.t1110.001

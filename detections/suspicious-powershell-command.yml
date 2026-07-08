@@ -1,0 +1,44 @@
+title: Suspicious PowerShell Command Line Pattern
+id: e6d5eb8c-ebb2-41c6-b75e-c38ed6080322
+status: experimental
+description: >
+  PowerShell started with flag combinations common in malicious one-liners:
+  encoded commands, hidden windows, profile bypass, or download-and-execute
+  patterns in the command line. Any single flag has legitimate uses; the rule
+  requires the encoded/download indicators, and triage decides based on the
+  decoded content and the parent process.
+references:
+  - https://attack.mitre.org/techniques/T1059/001/
+author: Ahmed Salem
+date: 2026-06-18
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_img:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+  selection_flags:
+    CommandLine|contains:
+      - '-enc '
+      - '-encodedcommand'
+      - 'downloadstring'
+      - 'downloadfile'
+      - 'frombase64string'
+      - 'iex ('
+      - 'invoke-expression'
+  condition: selection_img and selection_flags
+fields:
+  - CommandLine
+  - ParentImage
+  - User
+falsepositives:
+  - Endpoint management and deployment tools that push encoded commands on a schedule
+  - Administrators using encoded commands for legitimate remote maintenance
+level: high
+tags:
+  - attack.execution
+  - attack.t1059.001
+  - attack.defense-evasion
+  - attack.t1027

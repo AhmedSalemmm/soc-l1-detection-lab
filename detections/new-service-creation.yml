@@ -1,0 +1,39 @@
+title: New Windows Service Installed From Suspicious Path
+id: fff6c048-659f-4cb8-96d5-3ad8387bd64c
+status: experimental
+description: >
+  Service installation (event 7045) where the service binary runs from a user
+  profile, temp directory, or public folder. Services are a standard persistence
+  mechanism because they run as SYSTEM and survive reboots. Legitimate services
+  almost always install under Program Files or the Windows directory, so the
+  binary path separates routine software installs from persistence attempts
+  better than the service name does.
+references:
+  - https://attack.mitre.org/techniques/T1543/003/
+author: Ahmed Salem
+date: 2026-06-18
+logsource:
+  product: windows
+  service: system
+detection:
+  selection:
+    EventID: 7045
+  filter_paths:
+    ImagePath|contains:
+      - '\Users\'
+      - '\Temp\'
+      - '\AppData\'
+      - '\ProgramData\'
+      - '\Public\'
+  condition: selection and filter_paths
+fields:
+  - ServiceName
+  - ImagePath
+  - AccountName
+falsepositives:
+  - Installers that briefly register a helper service from a temp path during setup
+  - Some remote support and update agents that run from ProgramData by design
+level: high
+tags:
+  - attack.persistence
+  - attack.t1543.003

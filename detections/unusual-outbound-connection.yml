@@ -1,0 +1,50 @@
+title: Outbound Connection To Uncommon Port From Scripting Process
+id: 0c47239e-e452-4beb-8b5d-4bac44a778e3
+status: experimental
+description: >
+  Sysmon network connection (event 3) where a scripting or LOLBin process
+  initiates an outbound connection to a port outside the normal web and
+  infrastructure set. Browsers talking to 443 is life; PowerShell talking to
+  4444 or 8443 on an external address is worth a look every time. The process
+  list and port list are the tuning surface.
+references:
+  - https://attack.mitre.org/techniques/T1571/
+author: Ahmed Salem
+date: 2026-06-18
+logsource:
+  category: network_connection
+  product: windows
+detection:
+  selection_process:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+      - '\wscript.exe'
+      - '\cscript.exe'
+      - '\mshta.exe'
+      - '\rundll32.exe'
+      - '\regsvr32.exe'
+    Initiated: 'true'
+  filter_common_ports:
+    DestinationPort:
+      - 80
+      - 443
+      - 53
+      - 8080
+  filter_private_dest:
+    DestinationIp|startswith:
+      - '10.'
+      - '192.168.'
+      - '172.16.'
+  condition: selection_process and not filter_common_ports and not filter_private_dest
+fields:
+  - Image
+  - DestinationIp
+  - DestinationPort
+  - User
+falsepositives:
+  - Admin scripts calling internal APIs on custom ports; scope by destination, not by disabling the rule
+level: high
+tags:
+  - attack.command-and-control
+  - attack.t1571

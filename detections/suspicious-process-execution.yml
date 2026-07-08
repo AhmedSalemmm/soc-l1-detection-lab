@@ -1,0 +1,43 @@
+title: Office Application Spawning Command Interpreter
+id: 82ce0b70-f865-4a9b-bf80-0f4b23091690
+status: experimental
+description: >
+  Word, Excel, PowerPoint, or Outlook starting cmd, PowerShell, or a script
+  host. Office documents do not need shells in normal use; this parent-child
+  pair is the classic sign of a macro or exploit payload executing after a user
+  opened a malicious file. One of the highest-signal, lowest-noise endpoint
+  detections available.
+references:
+  - https://attack.mitre.org/techniques/T1204/002/
+author: Ahmed Salem
+date: 2026-06-18
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_parent:
+    ParentImage|endswith:
+      - '\WINWORD.EXE'
+      - '\EXCEL.EXE'
+      - '\POWERPNT.EXE'
+      - '\OUTLOOK.EXE'
+  selection_child:
+    Image|endswith:
+      - '\cmd.exe'
+      - '\powershell.exe'
+      - '\pwsh.exe'
+      - '\wscript.exe'
+      - '\cscript.exe'
+      - '\mshta.exe'
+  condition: selection_parent and selection_child
+fields:
+  - Image
+  - CommandLine
+  - ParentImage
+  - User
+falsepositives:
+  - Rare legacy document automation and Office add-ins that shell out; verify and scope per document or add-in, never per host
+level: high
+tags:
+  - attack.execution
+  - attack.t1204.002
