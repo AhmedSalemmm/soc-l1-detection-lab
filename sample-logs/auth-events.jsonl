@@ -1,0 +1,18 @@
+{"timestamp": "2026-06-22T03:10:12Z", "service": "vpn", "user": "amostafa", "src_ip": "203.0.113.99", "geo": "Frankfurt, DE", "result": "failure"}
+{"timestamp": "2026-06-22T03:11:05Z", "service": "vpn", "user": "bhassan", "src_ip": "203.0.113.99", "geo": "Frankfurt, DE", "result": "failure"}
+{"timestamp": "2026-06-22T03:12:38Z", "service": "vpn", "user": "cfarid", "src_ip": "203.0.113.99", "geo": "Frankfurt, DE", "result": "failure"}
+{"timestamp": "2026-06-22T03:13:59Z", "service": "vpn", "user": "dnabil", "src_ip": "203.0.113.99", "geo": "Frankfurt, DE", "result": "failure"}
+{"timestamp": "2026-06-22T03:15:21Z", "service": "vpn", "user": "eyoussef", "src_ip": "203.0.113.99", "geo": "Frankfurt, DE", "result": "failure"}
+{"timestamp": "2026-06-22T03:16:47Z", "service": "vpn", "user": "fsalah", "src_ip": "203.0.113.99", "geo": "Frankfurt, DE", "result": "failure"}
+{"timestamp": "2026-06-22T03:18:02Z", "service": "vpn", "user": "gadel", "src_ip": "203.0.113.99", "geo": "Frankfurt, DE", "result": "failure"}
+{"timestamp": "2026-06-22T06:55:30Z", "service": "vpn", "user": "hfarouk", "src_ip": "203.0.113.150", "geo": "Cairo, EG", "result": "success"}
+{"timestamp": "2026-06-22T07:20:11Z", "service": "o365", "user": "jdoe", "src_ip": "10.0.30.14", "geo": "internal", "result": "success"}
+{"timestamp": "2026-06-22T08:01:44Z", "service": "o365", "user": "lnaguib", "src_ip": "10.0.30.21", "geo": "internal", "result": "success"}
+{"timestamp": "2026-06-22T09:02:17Z", "service": "o365", "user": "msamir", "src_ip": "203.0.113.150", "geo": "Cairo, EG", "result": "success"}
+{"timestamp": "2026-06-22T09:41:44Z", "service": "o365", "user": "msamir", "src_ip": "198.51.100.23", "geo": "Amsterdam, NL", "result": "success"}
+{"timestamp": "2026-06-22T10:14:52Z", "service": "vpn", "user": "amostafa", "src_ip": "203.0.113.140", "geo": "Cairo, EG", "result": "success"}
+{"timestamp": "2026-06-22T12:33:08Z", "service": "o365", "user": "hfarouk", "src_ip": "10.0.30.35", "geo": "internal", "result": "failure"}
+{"timestamp": "2026-06-22T12:33:25Z", "service": "o365", "user": "hfarouk", "src_ip": "10.0.30.35", "geo": "internal", "result": "success"}
+{"timestamp": "2026-06-22T15:07:39Z", "service": "vpn", "user": "cfarid", "src_ip": "203.0.113.155", "geo": "Alexandria, EG", "result": "success"}
+{"timestamp": "2026-06-23T07:58:03Z", "service": "o365", "user": "jdoe", "src_ip": "10.0.30.14", "geo": "internal", "result": "success"}
+{"timestamp": "2026-06-23T08:05:47Z", "service": "o365", "user": "lnaguib", "src_ip": "10.0.30.21", "geo": "internal", "result": "success"}

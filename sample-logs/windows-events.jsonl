@@ -1,0 +1,24 @@
+{"timestamp": "2026-06-22T02:13:40Z", "channel": "Security", "event_id": 4624, "host": "SRV-FS01", "user": "svc-monitor", "src_ip": "10.0.10.8", "logon_type": 3}
+{"timestamp": "2026-06-22T02:14:05Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T02:14:11Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T02:14:19Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T02:14:26Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T02:14:38Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T02:14:52Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T02:15:03Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T02:15:17Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T02:15:41Z", "channel": "Security", "event_id": 4624, "host": "SRV-FS01", "user": "administrator", "src_ip": "203.0.113.42", "logon_type": 3}
+{"timestamp": "2026-06-22T08:02:41Z", "channel": "Security", "event_id": 4625, "host": "WKS-14", "user": "jdoe", "src_ip": "10.0.30.14", "logon_type": 2, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T08:02:59Z", "channel": "Security", "event_id": 4625, "host": "WKS-14", "user": "jdoe", "src_ip": "10.0.30.14", "logon_type": 2, "failure_reason": "bad password"}
+{"timestamp": "2026-06-22T08:03:15Z", "channel": "Security", "event_id": 4624, "host": "WKS-14", "user": "jdoe", "src_ip": "10.0.30.14", "logon_type": 2}
+{"timestamp": "2026-06-22T08:47:12Z", "channel": "Security", "event_id": 4624, "host": "FIN-WS-07", "user": "lnaguib", "src_ip": "10.0.30.21", "logon_type": 2}
+{"timestamp": "2026-06-22T10:15:02Z", "channel": "System", "event_id": 7045, "host": "WKS-14", "service_name": "AcmeAgentSvc", "image_path": "C:\\Program Files\\Acme Agent\\agentsvc.exe", "account": "LocalSystem"}
+{"timestamp": "2026-06-22T14:52:31Z", "channel": "System", "event_id": 7045, "host": "FIN-WS-07", "service_name": "WinUpdateSvc", "image_path": "C:\\Users\\Public\\updater.exe", "account": "LocalSystem"}
+{"timestamp": "2026-06-22T21:00:00Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "svc-backup", "src_ip": "10.0.20.45", "logon_type": 3, "failure_reason": "password expired"}
+{"timestamp": "2026-06-22T21:00:20Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "svc-backup", "src_ip": "10.0.20.45", "logon_type": 3, "failure_reason": "password expired"}
+{"timestamp": "2026-06-22T21:00:40Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "svc-backup", "src_ip": "10.0.20.45", "logon_type": 3, "failure_reason": "password expired"}
+{"timestamp": "2026-06-22T21:01:00Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "svc-backup", "src_ip": "10.0.20.45", "logon_type": 3, "failure_reason": "password expired"}
+{"timestamp": "2026-06-22T21:01:20Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "svc-backup", "src_ip": "10.0.20.45", "logon_type": 3, "failure_reason": "password expired"}
+{"timestamp": "2026-06-22T21:01:40Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "svc-backup", "src_ip": "10.0.20.45", "logon_type": 3, "failure_reason": "password expired"}
+{"timestamp": "2026-06-22T21:02:00Z", "channel": "Security", "event_id": 4625, "host": "SRV-FS01", "user": "svc-backup", "src_ip": "10.0.20.45", "logon_type": 3, "failure_reason": "password expired"}
+{"timestamp": "2026-06-22T22:30:05Z", "channel": "Security", "event_id": 4624, "host": "DC01", "user": "svc-monitor", "src_ip": "10.0.10.8", "logon_type": 3}
