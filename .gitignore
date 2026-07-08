@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Parser output (generated at runtime, not committed)
+output/
+
+# Local notes and drafts, kept out of the public repo
+notes/
+drafts/
+*.local.md
+
+# Environment and secrets
+.env
+*.pem
+*.key
+
+# OS noise
+Thumbs.db
+.DS_Store
