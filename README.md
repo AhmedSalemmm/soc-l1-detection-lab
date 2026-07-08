@@ -105,4 +105,4 @@ This project maps to what I want to do professionally: SOC L1, cybersecurity ana
 
 Ahmed Salem
 Cybersecurity graduate focused on GRC, defensive security, SOC analysis, and network security.
-LinkedIn: https://www.linkedin.com/in/ahmed-mohamed-salem
+LinkedIn: https://www.linkedin.com/in/ahmed-mohamed-salem-/
