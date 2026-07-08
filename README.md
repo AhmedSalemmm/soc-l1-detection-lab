@@ -68,7 +68,11 @@ screenshots/    capture checklist for the VM-based lab
 
 ## Screenshots
 
-Dashboard captures from the VM lab are listed in `screenshots/README.md` and will be added as the lab is rebuilt. The parser output and the example reports in `reports/` show the working results in the meantime.
+Parser output against the sample logs:
+
+![Parser output](screenshots/parser-output.png)
+
+Dashboard captures from the VM lab are listed in `screenshots/README.md` and will be added as the lab is rebuilt.
 
 ## What I learned
 
