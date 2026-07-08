@@ -68,11 +68,19 @@ screenshots/    capture checklist for the VM-based lab
 
 ## Screenshots
 
+Wazuh overview with the enrolled endpoint and 24-hour alert summary:
+
+![Wazuh dashboard overview](screenshots/wazuh-dashboard-overview.png)
+
+Threat hunting filtered to failed logons (event 4625) from the brute-force test:
+
+![Failed logon alerts](screenshots/wazuh-bruteforce-alerts.png)
+
 Parser output against the sample logs:
 
 ![Parser output](screenshots/parser-output.png)
 
-Dashboard captures from the VM lab are listed in `screenshots/README.md` and will be added as the lab is rebuilt.
+More captures (agents view, MITRE ATT&CK module, Sysmon Event Viewer) are in `screenshots/`.
 
 ## What I learned
 
@@ -87,7 +95,6 @@ Dashboard captures from the VM lab are listed in `screenshots/README.md` and wil
 - Convert the Sigma rules to native Wazuh rules and commit the tested XML.
 - Add a scenario generator so the log sets can be randomized for repeated practice.
 - Add Linux auth logs (sshd) and matching detections.
-- Capture the Wazuh dashboard screenshots from a rebuilt lab.
 - Add per-alert triage worksheets filled for every planted scenario, not just the brute force case.
 
 ## Portfolio note
